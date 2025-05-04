@@ -35,12 +35,14 @@ This repository contains the official website for Rubin Williams, a former Black
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/stynerdev225/rubin-williams.git
 cd rubin-williams
 ```
 
 2. Install dependencies
+
 ```bash
 pnpm install
 # or
@@ -48,6 +50,7 @@ npm install
 ```
 
 3. Run the development server
+
 ```bash
 pnpm dev
 # or
@@ -83,7 +86,7 @@ npm start
 
 ## Developer Notes
 
-```
+```javascript
 // Developed by Stiner.dev
 // Professional Web Developer
 // Date: May 3, 2025
