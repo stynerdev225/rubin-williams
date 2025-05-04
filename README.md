@@ -41,7 +41,7 @@ git clone https://github.com/stynerdev225/rubin-williams.git
 cd rubin-williams
 ```
 
-2. Install dependencies
+1. Install dependencies
 
 ```bash
 pnpm install
@@ -49,7 +49,7 @@ pnpm install
 npm install
 ```
 
-3. Run the development server
+1. Run the development server
 
 ```bash
 pnpm dev
@@ -57,7 +57,7 @@ pnpm dev
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+1. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Project Structure
 
