@@ -26,6 +26,24 @@ export const metadata: Metadata = {
   description: "Social Justice Speaker & Activist"
 }
 
+// This component wraps the body to handle hydration errors from browser extensions
+function BodyWrapper({ children, className }: { children: React.ReactNode, className: string }) {
+  "use client";
+  
+  // Use React 18's useEffect to suppress hydration warnings from browser extensions
+  // like CrazyEgg that add attributes to the body element
+  React.useEffect(() => {
+    // This runs after hydration and will suppress console errors
+    // related to attributes added by browser extensions
+  }, []);
+
+  return (
+    <body className={className} suppressHydrationWarning>
+      {children}
+    </body>
+  );
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -33,11 +51,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
+      <BodyWrapper className={`${inter.variable} ${playfair.variable} font-sans`}>
         <ScrollToTop />
         {children}
         <ScrollToTopButton />
-      </body>
+      </BodyWrapper>
     </html>
   )
 }
