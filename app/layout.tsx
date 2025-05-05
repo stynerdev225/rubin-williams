@@ -13,6 +13,7 @@ import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import ScrollToTop from "@/components/scroll-to-top"
 import ScrollToTopButton from "@/components/scroll-to-top-button"
+import { BodyWrapper } from "@/components/body-wrapper"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const playfair = Playfair_Display({
@@ -24,24 +25,6 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Rubin Williams",
   description: "Social Justice Speaker & Activist"
-}
-
-// This component wraps the body to handle hydration errors from browser extensions
-function BodyWrapper({ children, className }: { children: React.ReactNode, className: string }) {
-  "use client";
-  
-  // Use React 18's useEffect to suppress hydration warnings from browser extensions
-  // like CrazyEgg that add attributes to the body element
-  React.useEffect(() => {
-    // This runs after hydration and will suppress console errors
-    // related to attributes added by browser extensions
-  }, []);
-
-  return (
-    <body className={className} suppressHydrationWarning>
-      {children}
-    </body>
-  );
 }
 
 export default function RootLayout({
